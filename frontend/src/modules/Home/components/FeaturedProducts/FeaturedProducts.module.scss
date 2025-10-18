@@ -1,0 +1,15 @@
+@import "@/styles/abstracts/mixins.scss";
+@import "@/styles/abstracts/theme.scss";
+
+.featured {
+  width: 100%;
+  padding: 3rem 1.25rem 3rem;
+  background-color: $color-bg;
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: $color-primary;
+    margin-bottom: 1rem;
+  }
+}

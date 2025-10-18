@@ -1,13 +1,18 @@
 @import "@/styles/abstracts/mixins.scss";
+@import "@/styles/abstracts/theme.scss";
 
 .header {
   width: 100%;
-  height: 60px;
+  border-bottom: 1px solid $light-gray;
+  padding: 0.5rem 0;
+  background-color: $light-gray;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
   @include mf-tablet {
     height: 80px;
-    background-color: red;
   }
-
   &__logo {
     width: 3.125rem;
     height: 3.125rem;
@@ -21,12 +26,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
   }
 
   &__nav--desktop {
     display: none;
     @include mf-tablet {
       display: block;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 100%;
+      left: 50%;
+      background-color: white;
+      border-radius: 7px;
     }
   }
 

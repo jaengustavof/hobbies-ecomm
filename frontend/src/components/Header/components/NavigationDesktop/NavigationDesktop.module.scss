@@ -1,0 +1,41 @@
+@import "@/styles/abstracts/theme.scss";
+@import "@/styles/abstracts/mixins.scss";
+
+.navigation-desktop {
+  // Aplica a todo el wrapper (el NavigationMenu)
+  display: none;
+
+  @include mf-tablet {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $color-bg;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 0.5rem 1rem;
+    z-index: 20;
+  }
+
+  // Target directo a los items (li)
+  [data-slot="navigation-menu-item"] {
+    color: $color-text;
+    transition: color 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button,
+    a {
+      background: transparent;
+      color: inherit;
+      font-weight: bold;
+      font-size: 1.5rem;
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+}

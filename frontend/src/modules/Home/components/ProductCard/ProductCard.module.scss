@@ -1,0 +1,74 @@
+@import "@/styles/abstracts/mixins.scss";
+@import "@/styles/abstracts/theme.scss";
+
+.card {
+  background-color: $color-bg-light;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0.5rem 1rem;
+  border-radius: 7px;
+  border: 1px solid $light-gray;
+  gap: 0.5rem;
+  width: 100%;
+  flex-shrink: 0;
+  @include mf-tablet {
+    width: 300px;
+  }
+  @include mf-tablet-big {
+    width: 350px;
+  }
+
+  &__image {
+    width: 100%;
+    border-radius: 7px;
+    object-fit: cover;
+    object-position: center;
+    height: 12rem;
+    border: 1px solid $light-gray;
+  }
+  &__title {
+    font-size: 1.5rem;
+    color: $color-text;
+    font-weight: bold;
+    @include text-clamp(2, 5rem);
+  }
+  &__description {
+    font-size: 1rem;
+    color: $color-text-light;
+    margin-bottom: 1.5rem;
+    @include text-clamp(5, 7.5rem);
+  }
+  &__price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  &__text {
+    font-size: 1.2rem;
+    color: $color-text;
+    font-weight: bold;
+  }
+  &__price {
+    font-size: 1.6rem;
+    color: $color-text;
+    font-weight: bold;
+  }
+  &__cta {
+    background-color: $color-primary;
+    color: #fff;
+    border: none;
+    padding: 0.9rem 1.8rem;
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+
+    &:hover {
+      background-color: darken($color-primary, 10%);
+    }
+  }
+}

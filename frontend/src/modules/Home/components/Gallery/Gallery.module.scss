@@ -1,0 +1,62 @@
+@import "@/styles/abstracts/mixins.scss";
+@import "@/styles/abstracts/theme.scss";
+
+.gallery {
+  width: 100%;
+  height: auto;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  font-size: 1.5rem;
+  overflow: auto;
+  padding: 1rem;
+  position: relative;
+  &__inner {
+    display: flex;
+    gap: 1rem;
+    scroll-behavior: smooth;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    @include mf-tablet-big {
+      overflow-x: hidden;
+    }
+  }
+  &__button-container {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 10;
+    transform: translateY(-50%);
+    width: 100%;
+    padding: 0 1rem;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    @include mf-tablet-big {
+      display: flex;
+    }
+  }
+  &__button {
+    background-color: $color-secondary;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    &:hover {
+      background-color: rgba(255, 255, 255, 1);
+      color: $color-secondary;
+    }
+  }
+  &__arrow {
+    color: $color-bg;
+    width: 1.5rem;
+    height: 1.5rem;
+    &:hover {
+      color: $color-secondary;
+      transform: scale(1.1);
+    }
+  }
+}

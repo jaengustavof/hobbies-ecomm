@@ -1,0 +1,25 @@
+@import "@/styles/abstracts/mixins.scss";
+@import "@/styles/abstracts/theme.scss";
+
+.categories {
+  width: 100%;
+  padding: 3rem 1.25rem 3rem;
+  background-color: $color-bg-light;
+  &__title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: $color-primary;
+    margin-bottom: 1rem;
+  }
+  &__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    @include mf-laptop {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+  }
+}

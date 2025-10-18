@@ -1,0 +1,91 @@
+@import "@/styles/abstracts/mixins.scss";
+@import "@/styles/abstracts/theme.scss";
+
+.hero {
+  width: 100%;
+  height: calc(100dvh - 67px);
+  background-image: url("/images/header-mobile.webp");
+  background-size: cover;
+  background-position: center;
+
+  @include mf-tablet {
+    background-image: url("/images/header-tablet.webp");
+    height: calc(100dvh - 80px);
+  }
+  @include mf-laptop {
+    background-image: url("/images/header-desktop.webp");
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(31, 42, 46, 0.5), rgba(31, 42, 46, 0.4));
+    z-index: 1;
+    @include mf-tablet {
+      margin-top: 80px;
+    }
+  }
+  &__content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+    padding-inline: 1.5rem;
+    max-width: 360px;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 7px;
+    margin: initial;
+    @include mf-tablet {
+      max-width: 600px;
+    }
+    @include mf-laptop {
+      max-width: 1200px;
+    }
+  }
+
+  &__title {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  &__subtitle {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    @include mf-tablet {
+      font-size: 1.2rem;
+    }
+    @include mf-laptop {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__cta {
+    background-color: $color-primary;
+    color: #fff;
+    border: none;
+    padding: 0.9rem 1.8rem;
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+
+    &:hover {
+      background-color: darken($color-primary, 10%);
+    }
+  }
+}
